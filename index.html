@@ -3,69 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <title>Professional Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Flex:wght@400;500&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        /* Base Reset & Variables */
+        :root {
+            --bg-color: #fcfcfc;
+            --text-main: #2d3142;
+            --text-muted: #6c757d;
+            --accent: #4f5d75;
+            --max-width: 760px;
         }
-        .header {
-            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center/cover;
-            color: white;
-            padding: 60px 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-        h1, h2 {
+
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto Flex', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 4rem 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--text-main);
+            text-decoration: underline;
+        }
+
+        /* Layout Sections */
+        section {
+            margin-bottom: 4.5rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* 1. Hero Section (Subtle & Grounded) */
+        .hero {
+            margin-bottom: 5rem;
+            margin-top: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.25rem;
+            line-height: 1.2;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 600px;
+        }
+
+        /* 2. About Section */
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        /* 3 & 4. Lists (Featured Work & Career) */
+        .data-list {
+            list-style: none;
+        }
+
+        .data-item {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Layout adjustment for side-by-side feel on larger screens */
+        @media (min-width: 576px) {
+            .data-item {
+                grid-template-columns: 160px 1fr;
+                gap: 1.5rem;
+                margin-bottom: 1.25rem;
+            }
+        }
+
+        .data-meta {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .data-content h3 {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            display: inline-block;
+        }
+
+        .data-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        /* 5. Footer & Contact */
+        footer {
+            margin-top: 6rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .contact-trigger {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 2rem;
+        }
+
+        .footer-credit {
+            font-size: 0.8rem;
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto px-4 py-10">
-        <header class="text-center mb-8 bg-stars bg-no-repeat">
-            <h1 class="text-3xl font-semibold text-blue-600 text-white pt-8">Hello, I'm Ajay Potdar</h1>
-            <p class="text-gray-300 pb-4">and I am a Scientist</p>
+<body>
+
+    <div class="container">
+
+        <header class="hero">
+            <h1>[Professional Name]</h1>
+            <p>A brief, one-sentence description of specialized focus or core discipline. Understated, functional, and focused on the work.</p>
         </header>
 
-        <main class="grid grid-cols-1 gap-8">
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">About Me</h2>
-                <p class="text-gray-700 leading-relaxed">
-                    One of the most important discoveries of manking was the fact that mass is equivalent to energy. Einstein was able to recognize this through his pursuit of geometry and new perspectives therein.
-                    This is 
-                </p>
-                <p class="text-gray-700 leading-relaxed mt-4">
-                    In my free time, I enjoy [Mention your hobbies or interests]. I believe in continuous self-improvement and strive to make a positive impact in everything I do.
-                </p>
-            </section>
+        <section id="about">
+            <h2 class="section-title">Background</h2>
+            <p class="about-text">
+                This space contains a short overview of your professional approach, core philosophy, or technical background. It serves as a brief introduction to your domain expertise without unnecessary fluff.
+            </p>
+        </section>
 
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">My Skills</h2>
-                <ul class="list-disc list-inside space-y-2">
-                    <li class="text-gray-700">Skill 1: [e.g., Web Development]</li>
-                    <li class="text-gray-700">Skill 2: [e.g., Data Analysis]</li>
-                    <li class="text-gray-700">Skill 3: [e.g., Project Management]</li>
-                    <li class="text-gray-700">Skill 4: [e.g., Communication]</li>
-                    <li class="text-gray-700">Skill 5: [e.g., Problem Solving]</li>
-                </ul>
-                 <h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Education</h2>
-                <p class="text-gray-700 font-medium">Degree/Certification</p>
-                <p class="text-gray-600 text-sm mb-2">Institution Name - Year</p>
-                <p class="text-gray-700 leading-relaxed">
-                   [Add details about your education, relevant coursework, or achievements.]
-                </p>
-            </section>
-        </main>
+        <section id="work">
+            <h2 class="section-title">Selected Work</h2>
+            <ul class="data-list">
+                
+                <li class="data-item">
+                    <div class="data-meta"><a href="#" target="_blank">project-link-one &nearr;</a></div>
+                    <div class="data-content">
+                        <h3>Primary Project Title</h3>
+                        <p class="data-desc">A concise, single-sentence placeholder describing the problem solved, stack used, or research outcome.</p>
+                    </div>
+                </li>
 
-        <footer class="text-center mt-10">
-            <p class="text-gray-500 text-sm">Connect with me: [Your Email or Social Media Links]</p>
+                <li class="data-item">
+                    <div class="data-meta"><a href="#" target="_blank">project-link-two &nearr;</a></div>
+                    <div class="data-content">
+                        <h3>Secondary Project Title</h3>
+                        <p class="data-desc">Another brief descriptive placeholder highlighting a specific technical contribution or notable project feature.</p>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+
+        <section id="career">
+            <h2 class="section-title">Experience</h2>
+            <ul class="data-list">
+
+                <li class="data-item">
+                    <div class="data-meta">2024 — Present</div>
+                    <div class="data-content">
+                        <h3>Current Role / Title</h3>
+                        <p class="data-desc">Institution, Company, or Lab Name. Brief mention of primary responsibilities or key focus areas.</p>
+                    </div>
+                </li>
+
+                <li class="data-item">
+                    <div class="data-meta">2022 — 2024</div>
+                    <div class="data-content">
+                        <h3>Previous Role / Title</h3>
+                        <p class="data-desc">Institution, Company, or Lab Name. Core milestones achieved or specific projects managed during this period.</p>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+
+        <footer>
+            <a href="mailto:hello@domain.com" class="contact-trigger">hello@domain.com</a>
+            <p class="footer-credit">&copy; 2026 [Your Name]. All rights reserved.</p>
         </footer>
+
     </div>
+
 </body>
 </html>
